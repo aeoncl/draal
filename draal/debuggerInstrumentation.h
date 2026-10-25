@@ -1,5 +1,5 @@
 #pragma once
-#include "windows.h"
+#include <Windows.h>
 #include "../libs/logger.h"
 
 DWORD CreateDebuggedProcess(LPCSTR processNameIn, PROCESS_INFORMATION& processInfoOut, int argc, char* argv[], Logger* logger);

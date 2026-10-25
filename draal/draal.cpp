@@ -1,4 +1,5 @@
 #define WIN32_LEAN_AND_MEAN 
+#pragma once
 
 #include <iostream>
 #include <windows.h>
@@ -6,7 +7,6 @@
 #include "../libs/directoryUtils.h"
 #include "draal.h"
 #include <detours.h>
-#include "config.h"
 #include "mempatch.h"
 #include "instrumentation.h"
 #pragma comment(lib, "detours")
@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
 	delete bootstrapLogger;
 
 	SetupLogger(config.loggingEnabled, config.targetExecutable.c_str());
+	LogInstrumentationType(config.instrumentationType);
 
 	DWORD createMainProcessResult = CreateInterruptedProcess(config.targetExecutable.c_str(), PROCESS_INFO, argc, argv, config.instrumentationType, LOGGER);
 
@@ -65,6 +66,18 @@ int main(int argc, char* argv[])
 	return EXIT_SUCCESS;
 }
 
+void LogInstrumentationType(InstrumentationType& instrumentationType) {
+	switch (instrumentationType) {
+		case InstrumentationType::Suspend: {
+			LOGGER->LogLine("Configured instrumentation: suspend");
+			break;
+		} 
+		case InstrumentationType::Debugger: {
+			LOGGER->LogLine("Configured instrumentation: debugger");
+			break;
+		}
+	}
+}
 
 void SetupLogger(bool enabled, const char* name) {
 	LOGGER = CreateLogger(enabled, name);

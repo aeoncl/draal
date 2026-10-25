@@ -27,7 +27,7 @@ DraalConfig DraalConfig::LoadConfig(Logger* LOGGER, DWORD& errorCode)
 		return DraalConfig::Empty();
 	}
 
-	const char* instrumentationType = ini.GetValue("draal", "instrumentation_type");
+	const char* instrumentationType = ini.GetValue("draal", "instrumentation_type", "debugger");
 	out.instrumentationType = deserializeInstrumentationTypeOrDefault(instrumentationType);
 
 	out.targetExecutable = std::string(targetExecutable);
@@ -79,10 +79,10 @@ std::string ResolveDefaultLogDirectory(DWORD& errorCode)
 
 InstrumentationType deserializeInstrumentationTypeOrDefault(const char* instrumentationType)
 {
-	if (instrumentationType == "suspend") {
+	if (strcmp(instrumentationType, "suspend") == 0) {
 		return InstrumentationType::Suspend;
 	}
-	else if  (instrumentationType == "debugger") {
+	else if  (strcmp(instrumentationType, "debugger") == 0) {
 		return InstrumentationType::Debugger;
 	}
 	else {

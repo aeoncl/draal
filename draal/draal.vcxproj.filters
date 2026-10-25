@@ -30,6 +30,9 @@
     <ClCompile Include="debuggerInstrumentation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="suspendInstrumentation.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="draal.h">

@@ -2,7 +2,6 @@
 // fichier Include Microsoft Visual C++.
 // Utilisé par draal.rc
 //
-#define IDI_ICON1                       103
 
 // Next default values for new objects
 // 

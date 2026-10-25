@@ -1,10 +1,13 @@
+#pragma once
 #include "../libs/logger.h"
 #include <Windows.h>
 #include <string>
 #include <vector>
 
 enum class InstrumentationType {
+	//Uses CREATE_SUSPENDED flag + NtQueryInformationProcess
 	Suspend,
+	//Uses a debugger, works with wine but less elegant
 	Debugger
 };
 

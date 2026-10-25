@@ -1,3 +1,5 @@
+#pragma once
+
 #include "debuggerInstrumentation.h"
 #include "../libs/directoryUtils.h"
 #include <vector>

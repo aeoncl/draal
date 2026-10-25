@@ -153,6 +153,7 @@
     <ClCompile Include="draal.cpp" />
     <ClCompile Include="instrumentation.cpp" />
     <ClCompile Include="mempatch.cpp" />
+    <ClCompile Include="suspendInstrumentation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
