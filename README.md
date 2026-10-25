@@ -9,6 +9,7 @@ Draal is compatible with COM invocations since it passes through the working dir
 - [x] exe import table remove imports
 - [x] argument passthrough & workdir (for COM invocations) 
 - [x] config file
+- [x] App model id override (used by the shell for taskbar window grouping)
 
 
 ### Usage
@@ -22,6 +23,7 @@ Draal is compatible with COM invocations since it passes through the working dir
 target_executable = "myprocess.exe"
 dll_to_remove = "annoyingdll.dll"
 dll_to_inject = "amazingdll.dll"
+app_model_id_override = "MY.AMAZING.APP"
 
 [logs]
 enabled = true
