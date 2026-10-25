@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "draal", "draal\draal.vcxproj", "{7CCCD727-6C57-4E32-88C1-A04147552416}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DebugMDd|ARM = DebugMDd|ARM
+		DebugMDd|ARM64 = DebugMDd|ARM64
+		DebugMDd|x64 = DebugMDd|x64
+		DebugMDd|x86 = DebugMDd|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseMD|ARM = ReleaseMD|ARM
+		ReleaseMD|ARM64 = ReleaseMD|ARM64
+		ReleaseMD|x64 = ReleaseMD|x64
+		ReleaseMD|x86 = ReleaseMD|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|ARM.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|x64.ActiveCfg = Debug|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|x64.Build.0 = Debug|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|x86.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Debug|x86.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|ARM.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|ARM.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|ARM64.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|ARM64.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|x64.ActiveCfg = Debug|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|x64.Build.0 = Debug|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|x86.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.DebugMDd|x86.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|ARM.ActiveCfg = Release|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|ARM64.ActiveCfg = Release|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|x64.ActiveCfg = Release|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|x64.Build.0 = Release|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|x86.ActiveCfg = Release|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.Release|x86.Build.0 = Release|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|ARM.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|ARM.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|ARM64.ActiveCfg = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|ARM64.Build.0 = Debug|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|x64.ActiveCfg = Release|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|x64.Build.0 = Release|x64
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|x86.ActiveCfg = Release|Win32
+		{7CCCD727-6C57-4E32-88C1-A04147552416}.ReleaseMD|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A710ED9-6871-4B3F-B2D8-75C805B4BDFB}
+	EndGlobalSection
+EndGlobal
