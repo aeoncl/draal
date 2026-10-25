@@ -4,7 +4,7 @@
 #include "../libs/directoryUtils.h"
 #include <vector>
 
-DWORD CreateDebuggedProcess(LPCSTR processNameIn, PROCESS_INFORMATION& processInfoOut, int argc, char* argv[], Logger* logger)
+DWORD CreateDebuggedProcess(LPCSTR processNameIn, const std::string& appModelIdOverride, PROCESS_INFORMATION& processInfoOut, int argc, char* argv[], Logger* logger)
 {
 	std::string exeDir = GetProcessDirectory();
 	std::string targetPath = exeDir + processNameIn;
@@ -23,6 +23,10 @@ DWORD CreateDebuggedProcess(LPCSTR processNameIn, PROCESS_INFORMATION& processIn
 	commandLineBuffer.push_back('\0');
 
 	STARTUPINFOA startupInfo = {};
+	if (!appModelIdOverride.empty()) {
+		startupInfo.dwFlags |= STARTF_TITLEISAPPID;
+		startupInfo.lpTitle = (LPSTR)appModelIdOverride.c_str();
+	}
 	startupInfo.cb = sizeof(STARTUPINFOA);
 
 	BOOL result = CreateProcessA(

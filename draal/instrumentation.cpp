@@ -3,11 +3,11 @@
 #include "debuggerInstrumentation.h"
 #include "suspendInstrumentation.h"
 
-DWORD CreateInterruptedProcess(LPCSTR processNameIn, PROCESS_INFORMATION& processInfoOut, int argc, char* argv[], InstrumentationType& instrumentationType, Logger* logger)
+DWORD CreateInterruptedProcess(LPCSTR processNameIn, const std::string& appModelIdOverrideIn, PROCESS_INFORMATION& processInfoOut, int argc, char* argv[], InstrumentationType& instrumentationType, Logger* logger)
 {
 	switch (instrumentationType) {
-		case InstrumentationType::Suspend: return CreateSuspendedProcess(processNameIn, processInfoOut, argc, argv, logger);
-		case InstrumentationType::Debugger: return CreateDebuggedProcess(processNameIn, processInfoOut, argc, argv, logger);
+		case InstrumentationType::Suspend: return CreateSuspendedProcess(processNameIn, appModelIdOverrideIn, processInfoOut, argc, argv, logger);
+		case InstrumentationType::Debugger: return CreateDebuggedProcess(processNameIn, appModelIdOverrideIn, processInfoOut, argc, argv, logger);
 	}
 }
 

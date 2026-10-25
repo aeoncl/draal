@@ -27,10 +27,14 @@ DraalConfig DraalConfig::LoadConfig(Logger* LOGGER, DWORD& errorCode)
 		return DraalConfig::Empty();
 	}
 
+	out.targetExecutable = std::string(targetExecutable);
+
 	const char* instrumentationType = ini.GetValue("draal", "instrumentation_type", "debugger");
 	out.instrumentationType = deserializeInstrumentationTypeOrDefault(instrumentationType);
 
-	out.targetExecutable = std::string(targetExecutable);
+	const char* appModelIdOverride = ini.GetValue("draal", "app_model_id_override", "");
+	out.appModelIdOverride = std::string(appModelIdOverride);
+
 	out.loggingEnabled = ini.GetBoolValue("logs", "enabled");
 
 	CSimpleIniA::TNamesDepend dllsToRemove;

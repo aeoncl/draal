@@ -28,7 +28,12 @@ int main(int argc, char* argv[])
 	SetupLogger(config.loggingEnabled, config.targetExecutable.c_str());
 	LogInstrumentationType(config.instrumentationType);
 
-	DWORD createMainProcessResult = CreateInterruptedProcess(config.targetExecutable.c_str(), PROCESS_INFO, argc, argv, config.instrumentationType, LOGGER);
+	if (!config.appModelIdOverride.empty()) {
+		std::wstring wideAppModelIdOverride = std::wstring(config.appModelIdOverride.begin(), config.appModelIdOverride.end());
+		SetCurrentProcessExplicitAppUserModelID(wideAppModelIdOverride.c_str());
+	}
+
+	DWORD createMainProcessResult = CreateInterruptedProcess(config.targetExecutable.c_str(), config.appModelIdOverride, PROCESS_INFO, argc, argv, config.instrumentationType, LOGGER);
 
 	if (createMainProcessResult != ERROR_SUCCESS) {
 		Cleanup();
