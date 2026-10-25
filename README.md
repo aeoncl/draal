@@ -1,15 +1,6 @@
-# Tachyon-Detours
-Detour based utilities to connect WLM 14 to Tachyon
+# Draal
 
-The goal is to be compatible with existing third party servers that are using static patched binaries
-
-## Components
- - **Draal**: An executable that starts a process and patches it's import table
- - **Zathras**: A rerouting DLL that makes the client connect to our server, amongst other things
- - **Epsilon3**: A DLL that manages one instance of the server (starting and stopping) tied to the clients lifecycle.
-
-## Draal
-Draal creates processes in SUSPENDED mode, and then patches their import table.
+Draal is a proxy executable that creates a suspended target process, then injects / removes libraries from the targets import table.
 You can specify in a configuration file which dlls to remove and which to add.
 Draal is compatible with COM invocations since it passes through the working directory of the target process and the command line arguments it receives.
 
@@ -20,32 +11,27 @@ Draal is compatible with COM invocations since it passes through the working dir
 - [x] config file
 
 
-## Zathras
-Zathras is the backbone of Tachyon.
-It disarms the client and allows it to connect to local servers.
+### Usage
 
-### Features
-- [X] Signature check bypass for ppcrlbin & msnmsgr.exe
-- [X] msnmsgr.exe firewall check redirect
-- [X] Disable SSL & redirect to localhost (with whitelist support)
-- [X] ppcrlbin registry URL redirect
-- [X] identityCRL environment patch
-- [X] identityCRL WebAuthUrl redirect
-- [X] Contacts COM Server redirection to another CLSID
+1. Place `draal.exe` next to your target executable, make sure you match the bitness of your target process (32bits or 64bits)
+
+2. Place a `draal.ini` configuration file next to `draal.exe`
 
 ```
-- Zathras is Zathras, pronounced Zathras.
-- Zathras using detours dll also
-- Zathras helps with Tachyon operations.
-- Zathras works great machine
-- No one listens to Zathras...
+[draal]
+target_executable = "myprocess.exe"
+dll_to_remove = "annoyingdll.dll"
+dll_to_inject = "amazingdll.dll"
+
+[logs]
+enabled = true
 ```
 
-## Epsilon3
-Small DLL that handles starting and stopping the server with the client.
+### Debug logs
+If you enable logging in the config file, logs will be located in `%appdata%/Draal/*.log`
 
-### Features
-- [x] Manage one instance of the server
+### Wine compatibility
+Draal works with wine in the `debugger` instrumentation mode (default)
 
 ## Building
 You need Visual Studio 2019 with Windows XP Build Tools (v140) installed and C++ support.
